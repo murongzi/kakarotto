@@ -1,0 +1,28 @@
+{
+  "name": "kakarotto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murongzi/kakarotto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murongzi/kakarotto/issues"
+  },
+  "homepage": "https://github.com/murongzi/kakarotto#readme",
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "@types/webpack": "^3.8.5",
+    "ts-node": "^4.1.0",
+    "tsconfig-paths": "^3.1.1",
+    "typescript": "^2.7.1"
+  }
+}
