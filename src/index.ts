@@ -1,11 +1,11 @@
-import util from './lib/util';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-alert('fasdf');
+import { AppModule } from './app/app.module';
 
-let a = {aaa:'bbb'}
+if (process.env.NODE_ENV === 'production') {
+  enableProdMode();
+}
 
-const b = {...a};
-
-console.log(a, b)
-
-util();
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));

@@ -6,6 +6,7 @@ import * as Tapable from 'tapable';
 export default class extends BaseConfig implements webpack.Configuration {
     devtool: webpack.Options.Devtool = 'source-map';
     entry = {
+        polyfills: './polyfills.ts',
         index: './index.ts'
     };
 
@@ -22,8 +23,8 @@ export default class extends BaseConfig implements webpack.Configuration {
          * 
          * devtool也得预先存在
          */
-        this.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        /* this.plugins.push(new webpack.optimize.UglifyJsPlugin({
             sourceMap: true
-        }));
+        })); */
     }
 }
