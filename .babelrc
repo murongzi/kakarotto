@@ -2,8 +2,7 @@
     "presets": [
         "es2015",
         "stage-0",
-        "react",
-        "stage-1"
+        "react"
     ],
     "plugins": [
         "transform-runtime"
