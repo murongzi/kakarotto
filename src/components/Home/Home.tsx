@@ -10,6 +10,8 @@ export interface IHWProps {
 
 
 export default class Home extends React.Component {
+    private name: string = "123123";
+
     constructor(props){
         super(props)
     }
@@ -23,6 +25,7 @@ export default class Home extends React.Component {
             <div>
                 <div>这是home页</div>
                 <a onClick={this.onRedirectToList}>go list page</a>
+                <div>{this.name}</div>
             </div>
         )
     }
