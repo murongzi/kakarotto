@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+    devtool:'eval',
     entry: {
         vendor: [
             'react',
@@ -20,14 +21,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts(x?)$/,
                 enforce: 'pre',
                 exclude: /node_modules/,
                 include: path.join(__dirname, './src'),
                 loader: 'eslint-loader'
             },
             {
-                test: /\.tsx?$/,
+              test: /\.js$/,
+              enforce: 'pre',
+              include: path.join(__dirname, './src'),
+              loader: 'source-map-loader'
+            },
+            {
+                test: /\.ts(x?)$/,
                 use: [
                     {
                         loader: 'babel-loader'
@@ -35,7 +42,8 @@ module.exports = {
                     {
                         loader: 'awesome-typescript-loader'
                     }
-                ]
+                ],
+                include: path.join(__dirname, './src'),
             }
         ]
     },
@@ -46,7 +54,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: '[name].js'
-        }),
-        new webpack.optimize.UglifyJsPlugin()
+        })/* ,
+        new webpack.optimize.UglifyJsPlugin() */
     ]
 }

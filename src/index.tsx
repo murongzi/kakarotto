@@ -1,17 +1,28 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import HelloWorld from './components/Hello';
+import { BrowserRouter, HashRouter, Router, Route, Switch } from 'react-router-dom'
 
-let dom: JSX.Element = <HelloWorld compiler="TypeScript" framework="React"/>
+import HelloWorld from './components/Hello/Hello';
+import Home from './components/Home/Home';
+import List from './components/List/List';
 
-const a = {a:"fadsf", b: 'fasdfasdfasdf', c:"asdfasdfasdfasdf"};
+/* let dom: JSX.Element = <HelloWorld compiler="TypeScript" framework="React"/> */
 
-console.log({...a});
+ReactDOM.render(
+    <HashRouter>
+        <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/hw' component={HelloWorld} />
+            <Route path='/ls' component={List} />
+        </Switch>
+    </HashRouter>,
+    document.getElementById('root'));
 
-ReactDOM.render(dom, document.getElementById('root'));
 
-alert("fasdf");
+/* class Hello {
+    private str: string = "hahah";
+    constructor() {}
 
-let arry = `aaa`;
+}
 
-console.log(arry);
+new Hello; */
