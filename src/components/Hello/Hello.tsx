@@ -5,7 +5,7 @@ export interface IHWProps {
     framework: string
 }
 
-export default class HelloWorld extends React.Component {
+export default class HelloWorldComponent extends React.Component {
     constructor(props) {
         super(props);
     }

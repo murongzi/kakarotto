@@ -5,15 +5,13 @@ export interface IHWProps {
     framework: string
 }
 
-//let abc: Array<number> = [1, 2, 3];
-/* console.log(abc.includes(2)); */
+let abc: Array<number> = [1, 2, 3];
 
-
-export default class Home extends React.Component {
+export default class HomeComponment extends React.Component<IHWProps, {}> {
     private name: string = "123123";
 
-    constructor(props){
-        super(props)
+    constructor(props: IHWProps, context){
+        super(props, context)
     }
 
     onRedirectToList = () => {
