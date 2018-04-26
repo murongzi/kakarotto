@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "typescript-eslint-parser",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -11,7 +11,8 @@
     "JSX": true
   },
   "plugins": [
-    "react"
+    "react",
+    "typescript"
   ],
   "ecmaFeatures": {
     "jsx": true,
@@ -25,7 +26,7 @@
   },
   "rules": {
     "comma-dangle": 1,
-    "no-undef": 1,
+    "no-undef": 0,
     "global-strict": 0,
     "no-extra-semi": 1,
     "no-underscore-dangle": 0,
@@ -36,6 +37,8 @@
     "no-alert": 1,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
-    "react/react-in-jsx-scope": 1
-  }
+    "react/react-in-jsx-scope": 1,
+    "typescript/class-name-casing": 2
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

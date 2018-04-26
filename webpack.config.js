@@ -21,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js(x?)$/,
+                test: /\.ts(x?)$/,
                 enforce: 'pre',
                 exclude: /node_modules/,
                 include: path.join(__dirname, './src'),
