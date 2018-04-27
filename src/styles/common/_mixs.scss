@@ -1,0 +1,8 @@
+$section-width: 700px;
+$bg: green;
+
+
+@mixin section-mixin {
+  margin: 0 auto;
+  width: $section-width;
+}

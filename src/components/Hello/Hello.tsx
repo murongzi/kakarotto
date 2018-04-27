@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles.scss';
 
 export interface IHWProps {
     compiler: string,
@@ -12,8 +13,8 @@ export default class HelloWorldComponent extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>这是Hello页</div>
+            <div className="hello">
+                <div className="hello-title">这是Hello页</div>
             </div>
         )
     }

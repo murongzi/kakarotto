@@ -5,6 +5,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import HelloWorld from './components/Hello/Hello';
 import Home from './components/Home/Home';
 import List from './components/List/List';
+import './styles/main.scss';
 
 /* let dom: JSX.Element = <HelloWorld compiler="TypeScript" framework="React"/> */
 

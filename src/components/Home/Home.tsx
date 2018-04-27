@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles.scss';
 
 export interface IHWProps {
     compiler: string,
@@ -20,8 +21,8 @@ export default class HomeComponment extends React.Component<IHWProps, {}> {
 
     render() {
         return (
-            <div>
-                <div>这是home页</div>
+            <div className="home">
+                <div className="home-title">这是home页</div>
                 <a onClick={this.onRedirectToList}>go list page</a>
                 <div>{this.name}</div>
             </div>

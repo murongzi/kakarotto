@@ -1,0 +1,6 @@
+.hello {
+    display: flex;
+    &-title {
+        background: $bg;
+    }
+}
