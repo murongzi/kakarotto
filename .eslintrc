@@ -34,7 +34,8 @@
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/react-in-jsx-scope": 1,
-    "typescript/class-name-casing": 2
+    "typescript/class-name-casing": 2,
+    "react/prop-types": [2, { "ignore": ["children"] }]
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
