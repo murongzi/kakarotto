@@ -1,9 +1,0 @@
-body {
-    color: red;
-    @include border-radius(4px);
-    @include list-unstyled();
-
-    .page {
-        @include pagination-size(10px, 10px, 24px, 28px, 4px);
-    }
-}

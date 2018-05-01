@@ -1,45 +1,30 @@
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/index',
+    entry: './src/index.js',
     output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].[hash].js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: 'babel-loader',
-                exclude: ['node_modules']
-            },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
-            },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
-                    use: [
-                        'css-loader',
-                        'postcss-loader',
-                        'sass-loader',
-                        {
-                            loader: 'sass-resources-loader',
-                            options: {
-                                resources: './node_modules/bootstrap/scss/bootstrap.scss'
-                            }
-                        }
-                    ]
-                })
+                exclude: /node_modules/
             }
         ]
     },
+    resolve: {
+        alias: {
+            'components':  path.resolve(__dirname, 'src/components'),
+            'stores':  path.resolve(__dirname, 'stores')
+        }
+    },
     plugins: [
-        new ExtractTextPlugin('app.css')
+        new HTMLWebpackPlugin({
+            template: './src/index.ejs'
+        })
     ]
 }
