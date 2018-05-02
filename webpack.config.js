@@ -90,10 +90,10 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'script/[name].js'
-        }),
+        })/* ,
         new webpack.optimize.UglifyJsPlugin({
             comments: false,
             sourceMap: false
-        })
+        }) */
     ]
 }
