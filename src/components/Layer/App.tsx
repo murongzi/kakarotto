@@ -14,7 +14,7 @@ export default class App extends React.Component {
                     {this.props.children}
                     </div>
                 </main>
-                {/* <footer>footer</footer> */}
+                <footer className="app-container-footer">footer</footer>
             </div>
         )
     }
