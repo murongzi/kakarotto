@@ -26,7 +26,7 @@ class HelloWorldComponent extends React.Component<IHProps> {
     }
 
     OnClearList = () => {
-        this.props.setList(["q", "a", "b"])
+        this.props.setList([8, 9, 10])
     }
 
     render() {
@@ -60,7 +60,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IHProps) => {
         getList() {
             dispatch(actions.getList())
         },
-        setList(params) {
+        setList(params: number[]) {
             dispatch(actions.setList(params))
         }
     }

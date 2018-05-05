@@ -15,5 +15,4 @@ interface IDispatchProps {
 }
 
 export interface IComponmentProps extends IStateStore, IDispatchProps  {
-    
 }

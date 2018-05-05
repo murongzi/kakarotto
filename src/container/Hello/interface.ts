@@ -4,7 +4,12 @@ export interface IHello {
     list: number[];
 }
 
+interface IF {
+    (params: number[]): IHello;
+}
+
+
 export interface IDisp {
-    getList?: any;
-    setList?: any;
+    getList: any;
+    setList: IF
 }

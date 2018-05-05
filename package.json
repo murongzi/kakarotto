@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && webpack --display-error-details",
-    "start": "webpack -w",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf -rf ./dist/"
   },
@@ -50,6 +50,7 @@
     "style-loader": "^0.21.0",
     "typescript": "^2.8.3",
     "typescript-eslint-parser": "^15.0.0",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.2"
   }
 }

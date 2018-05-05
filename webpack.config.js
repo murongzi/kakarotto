@@ -21,6 +21,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script/[name].js'
     },
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 9000
+    },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
