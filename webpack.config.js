@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-    /* devtool:'eval', */
+    devtool:'inline-source-map',
     entry: {
         vendor: [
             'react',
