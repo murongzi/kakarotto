@@ -1,7 +1,11 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import Config, {IList} from './config'
 
-export default class ListComponment extends React.Component {
+
+export default connect(() => {
+    
+})(class ListComponment extends React.Component {
     private config: IList = Config;
 
     constructor(props) {
@@ -25,4 +29,4 @@ export default class ListComponment extends React.Component {
             </ul>
         );
     }
-}
+});

@@ -1,7 +1,8 @@
-import { ADD_TODO } from './action';
+import { ADD_TODO, GET_LIST } from './action';
 
 const initialState = {
-    text: {count: 0}
+    text: { count: 0 },
+    list: []
 };
 
 function todoApp(state = initialState, action) {
@@ -10,10 +11,15 @@ function todoApp(state = initialState, action) {
             return Object.assign({}, state, {
                 text: action.text
             });
+        case GET_LIST:
+            return Object.assign({}, state, {
+                list: action.data
+            });
         default:
             return state;
 
     }
 }
+
 
 export default todoApp;

@@ -55,7 +55,7 @@ const mapStateToProps = (state: IRootStore, ownProps: IHProps) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IHProps) => {
+const mapDispatchToProps = (dispatch: Dispatch<any, any>, ownProps: IHProps) => {
     return {
         getList() {
             dispatch(actions.getList())
