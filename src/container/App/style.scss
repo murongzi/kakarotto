@@ -7,16 +7,11 @@
     &-main {
         height: 100%;
         width: 100%;
-        display: flex;
-        flex-direction: row;
 
-        &-left {
-            width: 200px;
-        }
 
         &-bd {
             position: relative;
-            flex: 1;
+            float: right;
             display: flex;
             flex-direction: column;
 
@@ -27,6 +22,7 @@
             > header {
                 position: static;
                 background: transparent;
+                z-index: 2;
             }
 
             > main {

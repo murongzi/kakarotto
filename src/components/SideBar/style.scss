@@ -1,0 +1,40 @@
+.siderbar {
+    transition-property: width;
+    transition-duration: .35s;
+    transition-timing-function: ease;
+    width: 260px;
+    height: 100%;
+    float: left;
+    background: #2ca8ff;
+    position: fixed;
+    z-index: 10;
+}
+
+.sidebar-mini {
+    .siderbar {
+        width: 80px;
+        &:hover {
+            width: 260px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.sidebar-mini {
+    .app-main-bd {
+        transition-property: width;
+        transition-duration: .35s;
+        transition-timing-function: ease;
+        width: calc(100% - 80px);
+    }
+}
+
+.app-main-bd {
+    transition-property: width;
+    transition-duration: .35s;
+    transition-timing-function: ease;
+    width: calc(100% - 260px);
+}

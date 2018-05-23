@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 
 import { Person, Notifications, Dashboard, Search } from "@material-ui/icons";
+import SiderBar from '../../components/SideBar';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -20,7 +21,9 @@ export default class App extends React.Component {
         return (
             <div className="app-container">
                 <div className="app-main">
-                    <section className="app-main-left">left</section>
+                    <SiderBar>
+                        left
+                    </SiderBar>
                     <section className="app-main-bd">
                         <AppBar>
                             <Toolbar>
