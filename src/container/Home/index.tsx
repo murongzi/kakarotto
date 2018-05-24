@@ -1,16 +1,20 @@
 import './style.scss';
-import * as React from 'react';
+import * as React from 'react'
 import {
     Button,
-    Table,
-    TableCell,
-    TableHead,
-    TableRow,
-    TableBody,
     Paper,
     TablePagination,
-    TableFooter
-} from "@material-ui/core";
+    TableFooter,
+    Modal
+} from "@material-ui/core"
+import RegularCard from "../../components/RegularCard"
+import Table from '../../components/Table';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import HomeAction from './action'
+import { IRootState } from '../../IRootState';
+import { IDispatchProps, IStateProps } from './IHome'
+import { Dispatch } from 'redux'
 
 const styles = () => ({
     root: {
@@ -36,17 +40,61 @@ const data = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default class HelloWorldComponent extends React.Component {
+function mapStateToProps (state: IRootState, ownProps) {
+    return {
+        reducers: state.HomeReducers
+    }
+}
+
+function mapActionToDispatch(dispatch: Dispatch<any>) {
+    return {
+        actions: bindActionCreators(HomeAction, dispatch)
+    }
+}
+
+interface IASP extends IRootState, IDispatchProps,IStateProps  {
+
+}
+
+export default connect(mapStateToProps, mapActionToDispatch)(class HelloWorldComponent extends React.Component<IASP> {
     constructor(props) {
         super(props);
+    }
+
+    onClick = () => {
+        this.props.actions.getList({
+            a:"fasdfasdf"
+        })
     }
 
     render() {
         const classes = styles();
 
+        console.log(this.props.reducers.list);
+
         return (
             <div className="Home">
-                <Paper>
+            <button onClick={this.onClick}>button</button>
+
+            <RegularCard
+                cardTitle="Simple Table"
+                cardSubtitle="Here is a subtitle for this table"
+                content={
+                    <Table
+                    tableHeaderColor="primary"
+                    tableHead={["Name", "Country", "City", "Salary"]}
+                    tableData={[
+                        ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
+                        ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
+                        ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
+                        ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
+                        ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
+                        ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                    ]}
+                    />
+                }
+            />
+                {/* <Paper>
                     <Table className="Home-table">
                         <TableHead>
                             <TableRow>
@@ -86,8 +134,8 @@ export default class HelloWorldComponent extends React.Component {
                         </TableFooter>
                     </Table>
 
-                </Paper>
+                </Paper> */}
             </div>
         );
     }
-}
+})

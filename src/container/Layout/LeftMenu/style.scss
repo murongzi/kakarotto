@@ -1,0 +1,22 @@
+.leftMenu {
+    white-space: nowrap;
+
+    &-custom {
+        h3 {
+            color: #fff;
+        }
+    }
+
+    &-user {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 16px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
