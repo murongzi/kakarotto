@@ -27,7 +27,6 @@
     "no-extra-semi": 1,
     "no-underscore-dangle": 0,
     "no-console": 1,
-    "no-unused-vars": 1,
     "no-trailing-spaces": [1, { "skipBlankLines": true }],
     "no-unreachable": 1,
     "no-alert": 1,
@@ -36,6 +35,7 @@
     "react/jsx-uses-vars": 1,
     "react/react-in-jsx-scope": 1,
     "typescript/class-name-casing": 2,
+    "typescript/no-unused-vars": "error",
     "react/prop-types": [2, { "ignore": ["children"] }]
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
