@@ -12,5 +12,5 @@ console.log('reg', reg2.test('aa@qq.com'))
 
 const func = ''.match(/=>\s*\{(.*)\}/s)[1] || ''
 const fn = new Function('data', func) // NOSONAR
-const a = fn(result.data)
+const a = fn(result.data) // NOSONAR
 console.log('a', a)
